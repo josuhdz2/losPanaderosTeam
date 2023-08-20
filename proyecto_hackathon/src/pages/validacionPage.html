@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tu Página</title>
+    <style>
+
+        body {
+            margin: 50;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+            min-height: 50vh;
+            background-color: #011e46;
+        }
+
+        .titulo {
+            width: 30%;
+            text-align: center;
+            font-size: 24px;
+            padding: 20px;
+            margin-top: 20px;
+            box-sizing: border-box;
+            background-color: rgb(255, 255, 255);
+        }
+
+        .rectangulo-grande {
+            width: 100%;
+            max-width: 1200px;
+            border: 2px solid rgb(255, 255, 255);
+            display: flex;
+            flex-direction: column;
+            align-items: stretch;
+            box-sizing: border-box;
+            background-color: white;
+            margin-top: 20px;
+            padding: 20px;
+        }
+
+        .rectangulo-interno {
+            flex: 30;
+            border: 1px solid rgb(255, 255, 255);
+            margin: 50px 0;
+            background-color: rgba(104, 137, 148, 0.829);
+            display: flex;
+            align-items: center;
+            justify-content: space-between; 
+            padding-left: 70px; 
+            padding-right: 70px; 
+        }
+
+        .subtitulo-izquierda {
+        flex: 2; 
+        margin-right: 50px;
+        padding: 40px; 
+        font-size: 30px;   
+    }
+    .btn {
+    font-size: 20px; /* Ajusta el tamaño del texto */
+    padding: 10px 20px; /* Ajusta el espacio interno del botón */
+    background-color: #fc5353;
+    border: 2px #fc5353;
+  }
+
+
+    </style>
+</head>
+<body>
+    <div class="titulo">
+        Lista de validaciones
+    </div>
+    <div class="rectangulo-grande" id="contenedor">
+    </div>
+<script>
+    var contenedor=document.getElementById('contenedor');
+    function obtener(id)
+    {
+        console.log(id);
+    }
+    function renderizarValidaciones(datos)
+    {
+        var contenido=``;//se tiene que analizar el 
+        datos.forEach((elemento)=>
+        {
+            console.log(elemento)
+            contenido+=`
+            <div class="rectangulo-interno">
+            <div class="subtitulo-izquierda">ID: ${elemento.usuarioId}</div>
+            <div class="subtitulo-izquierda">Fecha de revision: ${elemento.fechaRevision?elemento.fechaRevision:"Sin revisar"}</div>
+            <button class="btn" onclick="obtener('${elemento._id}')" ${elemento.estado?'':'disabled'}>Botón 1</button>
+            </div>
+            `;
+            //renderizacion por elemento
+        });
+        contenedor.innerHTML=contenido;
+    }
+    async function post(url, data)
+    {
+        const response=await fetch(url, 
+        {
+            method:'POST',
+            mode:'cors',
+            headers:{
+                'Content-Type':'application/x-www-form-urlencoded',
+                'Authorization':localStorage.getItem('tokenAuth')
+            },
+            body:JSON.stringify(data)
+        });
+        return response.json();
+    }
+    post('http://localhost:3000/api/optenerValidaciones', {curp:localStorage.getItem('curp')})
+    .then(data=>
+    {
+        if(data.response=="success")
+        {
+            renderizarValidaciones(data.data);
+        }
+    })
+</script>
+</html>

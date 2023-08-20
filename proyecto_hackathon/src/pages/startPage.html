@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Página de Inicio</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background-color: #011e46; 
+      font-family: Arial, sans-serif;
+    }
+    
+    header {
+      text-align: center;
+      padding: 0px 0;
+    }
+    
+    header img {
+      max-width: 100%;
+      height: auto;
+    }
+    
+    main {
+      text-align: center;
+      padding: 20px 0; 
+    }
+    
+    .button-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    
+    
+    button {
+      background-color: rgb(17, 72, 255);
+      border: none;
+      cursor: pointer;
+      width: 200px;
+      height: 50px;
+      margin: 10px;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-family: "Cooper";
+    }
+    
+    
+    button a {
+      text-decoration: none;
+      color: white;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 20%; 
+      font-size: 20px;
+      transition: background-color 0.3s ease;
+      font-family: "Cooper";
+    }
+    
+    button:hover a {
+      background-color: rgba(115, 148, 255, 0.3); 
+    }
+
+header img {
+  width: 300px;
+  height: 300px;
+  margin-right: 10px;
+}
+
+header h1 {
+  color: #ffffff;
+  font-size: 34px;
+  font-family: "Cooper";
+}
+  </style>
+</head>
+<body>
+  <header>
+    <img src="../assets/icono.ico" alt="img">
+    <h1>AD</h1>
+  </header>
+  <main>
+    <div class="button-container">
+      <button id="login"><a>Iniciar Sesión</a></button>
+      <button id="register"><a>Registrarse</a></button>
+    </div>
+  </main>
+  <script>
+    const {ipcRenderer}=require('electron');
+    document.getElementById('login').addEventListener('click', ()=>
+    {
+        ipcRenderer.send('navigate', 'login');
+    });
+    document.getElementById('register').addEventListener('click', ()=>
+    {
+        ipcRenderer.send('navigate', 'register');
+    })
+  </script>
+</body>
+</html>

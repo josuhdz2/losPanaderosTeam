@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Registro</title>
+  <style>
+
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: "Cooper";
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: #011e46;
+      padding: 10px 50px;
+    }
+
+    .logo {
+      max-height: 80px;
+    }
+
+    h1 {
+      color: #ffffff;
+      font-family: "Copperplate", sans-serif;
+      margin: 0;
+      font-family: "Cooper";
+    }
+
+    main {
+      display: flex;
+      justify-content: center;
+      align-items: flex-start; /* Cambiamos a flex-start para alinear arriba */
+      height: 100vh;
+    }
+
+    form {
+      text-align: center;
+      border: 1px solid #011e46;
+      padding: 30px;
+      border-radius: 5px;
+      background-color: #011e46;
+      box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+      width: 400px;
+      margin-top: 20px; /* Añade separación de la parte superior */
+    }
+
+    label {
+      display: block;
+      margin-bottom: 5px;
+      font-weight: bold;
+      color: #ffffff;
+    }
+
+    input,
+    select {
+      width: 100%;
+      padding: 8px;
+      margin-bottom: 10px;
+      border: 1px solid #ccc;
+      border-radius: 3px;
+    }
+
+    button {
+      padding: 10px 20px;
+      background-color: #007bff;
+      color: #fff;
+      border: none;
+      border-radius: 3px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #0056b3;
+      font-family: "Cooper";
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <img src="../assets/icono.ico" alt="Logo" class="logo">
+    <h1>Registro</h1>
+  </header>
+  <main>
+    <form>
+      <label for="name">Nombre:</label>
+      <input type="text" id="nombreUI" name="name" required>
+      <label for="name">Apellidos:</label>
+      <input type="text" id="apellidosUI" name="name" required>
+
+      <label for="curp">CURP:</label>
+      <input type="text" id="curpUI" name="curp" required>
+
+      <label for="studyLevel">Nivel de Estudio:</label>
+      <select id="studyLevel" name="studyLevel" required>
+        <option value="primaria">Primaria</option>
+        <option value="secundaria">Secundaria</option>
+        <option value="preparatoria">Preparatoria</option>
+        <option value="ninguno">Ninguno</option>
+      </select>
+
+      <label for="contact">Correo o Teléfono:</label>
+      <input type="text" id="contactoUI" name="contact" required>
+
+      <label for="password">Contraseña:</label>
+      <input type="password" id="passwordUI" name="password" required>
+
+      <button type="button" id="registrarse">Registrarse</button>
+    </form>
+  </main>
+  <script>
+    const {ipcRenderer}=require('electron');
+    var nombre=document.getElementById('nombre');
+    var curpUI=document.getElementById('curpUI');
+    var apellidosUI=document.getElementById('apellidosUI');
+    var studyLevel=document.getElementById('studyLevel');
+    var contactoUI=document.getElementById('contactoUI');
+    var passwordUI=document.getElementById('passwordUI');
+    async function post(url, data)
+    {
+        console.log(data);
+        const response=await fetch(url, 
+        {
+            method:'POST',
+            mode:'cors',
+            headers:{
+                'Content-Type':'application/x-www-form-urlencoded'
+            },
+            body:JSON.stringify(data)
+        });
+        return response.json();
+    }
+    document.getElementById('registrarse').addEventListener('click', ()=>
+    {
+        const doc={
+            nombre:nombreUI.value,
+            apellidos:apellidosUI.value,
+            password:passwordUI.value,
+            curp:curpUI.value,
+            nivelEstudios:studyLevel.value,
+            contacto:contactoUI.value
+        }
+        console.log(doc)
+        post('http://localhost:3000/api/registro', doc)
+        .then(data=>
+        {
+            if(data.response=="success")
+            {
+                ipcRenderer.send('registroCompletado');
+            }
+        })
+    })
+  </script>
+</body>
+</html>
+

@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Formulario de Preguntas</title>
+</head>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #011e46;
+        margin: 0;
+        padding: 0;
+    }
+
+    #quiz-form {
+        background-color: #fff;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 2px 4px rgba(255, 255, 255, 0.1);
+        max-width: 600px;
+        margin: 20px auto;
+    }
+
+    h1 {
+        text-align: center;
+        margin-top: 20px; 
+        color: white;
+    }
+
+    h3 {
+        margin-bottom: 5px;
+        text-align: justify; 
+    }
+
+    input[type="radio"] {
+        margin-right: 5px;
+    }
+
+    button {
+        background-color: #007bff;
+        color: #fff;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 5px;
+        cursor: pointer;
+        display: block;
+        margin: 20px auto;
+    }
+
+    button:hover {
+        background-color: #0056b3;
+    }
+
+    #score {
+        font-weight: bold;
+        text-align: center;
+        margin-top: 20px;
+    }
+
+    #correct-answers, #incorrect-answers {
+        color: #007bff;
+        text-align: center;
+    }
+
+    h2 {
+        text-align: center;
+        margin-top: 30px;
+    }
+
+    #score, #correct-answers, #incorrect-answers {
+        margin-bottom: 20px;
+    }
+
+   
+h2 {
+  font-size: 24px;
+  color: #ff9900; 
+  margin-bottom: 10px;
+}
+
+
+p {
+  font-size: 18px;
+  color: #333; 
+  margin: 5px 0;
+}
+
+
+#score {
+  font-weight: bold;
+  color: #00cc66; 
+}
+
+#correct-answers {
+  color: #0099cc; 
+}
+
+#incorrect-answers {
+  color: #ff3333; 
+}
+
+
+</style>
+   
+
+<body>
+    <h1>Formulario de Preguntas</h1>
+    <form id="quiz-form">
+        
+        <h3>1. Tarjetas o papeletas que sirven para organizar los datos encontrados e información más
+            importante de materiales consultados en una investigación.</h3>
+
+        <input type="radio" name="q1" value="a"> a) Lluvia de ideas <br>
+        <input type="radio" name="q1" value="b"> b) Fichas de trabajo <br>
+        <input type="radio" name="q1" value="c"> c) Resumen <br>
+        <input type="radio" name="q1" value="d"> d) Cita textual <br>
+        <br>
+        
+        <h3>2. Reducción de un texto a sus partes esenciales, en el cual debe respetarse el orden de las
+            ideas principales y palabras del autor.</h3>
+
+        <input type="radio" name="q2" value="a"> a) Lluvia de ideas <br>
+        <input type="radio" name="q2" value="b"> b) Fichas de trabajo <br>
+        <input type="radio" name="q2" value="c"> c) Resumen <br>
+        <input type="radio" name="q2" value="d"> d) Cita textual <br>
+        <br>
+
+        <h3>3. Son las que recuperan un fragmento de un texto exactamente con las mismas palabras
+            que usó su autor, van entre comillas.</h3>
+
+        <input type="radio" name="q3" value="a"> a) Lluvia de ideas <br>
+        <input type="radio" name="q3" value="b"> b) Fichas de trabajo <br>
+        <input type="radio" name="q3" value="c"> c) Resumen <br>
+        <input type="radio" name="q3" value="d"> d) Cita textual <br>
+        <br>
+
+        <h3>4. Documentos que especifican normas para regular las actividades de los miembros de
+            una comunidad, cimientan las bases para la convivencia.</h3>
+
+        <input type="radio" name="q4" value="a"> a) Reglamento <br>
+        <input type="radio" name="q4" value="b"> b) Leyes y derechos <br>
+        <input type="radio" name="q4" value="c"> c) Declaración de los Derechos del niño y adolescente <br>
+        <input type="radio" name="q4" value="d"> d) Constitución <br>
+        <br>
+
+        <h3>5. Explicación o interpretación que expresa el mismo sentido del autor, pero con otras
+            palabras de manera más amplificada.</h3>
+
+        <input type="radio" name="q5" value="a"> a) Paráfrasis <br>
+        <input type="radio" name="q5" value="b"> b) Fichas de trabajo <br>
+        <input type="radio" name="q5" value="c"> c) Resumen <br>
+        <input type="radio" name="q5" value="d"> d) Cita textual <br>
+        <br>
+
+        <h3>6. Son recursos que se utilizan para proporcionar información que no es textual, excepto:</h3>
+
+        <input type="radio" name="q6" value="a"> a) Ilustraciones <br>
+        <input type="radio" name="q6" value="b"> b) Gráficas <br>
+        <input type="radio" name="q6" value="c"> c) Tablas <br>
+        <input type="radio" name="q6" value="d"> d) Resumen <br>
+        <br>
+
+        <h3>7. Ayudan a identificar los datos del texto consultado (Fuentes):</h3>
+
+        <input type="radio" name="q7" value="a"> a) Paráfrasis <br>
+        <input type="radio" name="q7" value="b"> b) Cita textual <br>
+        <input type="radio" name="q7" value="c"> c) Referencias bibliográficas <br>
+        <input type="radio" name="q7" value="d"> d) Resumen <br>
+        <br>
+
+        <h3>8. Conjunto de normas jurídicas que protegen a las personas que aún no cumplen 18 años.
+        </h3>
+
+        <input type="radio" name="q8" value="a"> a) Reglamento <br>
+        <input type="radio" name="q8" value="b"> b) Leyes y derechos <br>
+        <input type="radio" name="q8" value="c"> c) Declaración de los Derechos del niño y adolescente <br>
+        <input type="radio" name="q8" value="d"> d) Constitución <br>
+        <br>
+
+        <h3>9. Fueron establecidos para favorecer una vida más justa e igualitaria.</h3>
+
+        <input type="radio" name="q9" value="a"> a) Reglamento <br>
+        <input type="radio" name="q9" value="b"> b) Leyes y derechos <br>
+        <input type="radio" name="q9" value="c"> c) Declaración de los Derechos del niño y adolescente <br>
+        <input type="radio" name="q9" value="d"> d) Constitución <br>
+        <br>
+
+        <h3>10. Narración breve con un acontecimiento central, tiene pocos personajes y una trama
+            intensa.</h3>
+
+        <input type="radio" name="q10" value="a"> a) Cuento <br>
+        <input type="radio" name="q10" value="b"> b) Mito <br>
+        <input type="radio" name="q10" value="c"> c) Leyenda <br>
+        <input type="radio" name="q10" value="d"> d) Novela <br>
+        <br>
+        
+        <button type="button" id="submit-button">Enviar Respuestas</button>
+
+    </form>
+
+    <h2>Resultados:</h2>
+    <p id="score"></p>
+    <p id="correct-answers"></p>
+    <p id="incorrect-answers"></p>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+        const form = document.getElementById("quiz-form");
+        const submitButton = document.getElementById("submit-button");
+        const scoreElement = document.getElementById("score");
+        const correctAnswersElement = document.getElementById("correct-answers");
+        const incorrectAnswersElement = document.getElementById("incorrect-answers");
+
+        submitButton.addEventListener("click", function () {
+            const answers = {
+                q1: form.q1.value,
+                q2: form.q2.value,
+                q3: form.q3.value,
+                q4: form.q4.value,
+                q5: form.q5.value,
+                q6: form.q6.value,
+                q7: form.q7.value,
+                q8: form.q8.value,
+                q9: form.q9.value,
+                q10: form.q10.value
+            };
+            const correctAnswers = {
+                q1: "b",
+                q2: "c",
+                q3: "d",
+                q4: "a",
+                q5: "a",
+                q6: "d",
+                q7: "c",
+                q8: "c",
+                q9: "b",
+                q10: "a"
+                
+            };
+
+            let score = 0;
+            let correctCount = 0;
+            let incorrectCount = 0;
+
+            for (const question in answers) {
+                if (answers[question] === correctAnswers[question]) {
+                    score ++;
+                    correctCount++;
+                } else {
+                    incorrectCount++;
+                }
+            }
+
+            scoreElement.textContent = `Puntuación: ${score}`;
+            correctAnswersElement.textContent = `Respuestas correctas: ${correctCount}`;
+            incorrectAnswersElement.textContent = `Respuestas incorrectas: ${incorrectCount}`;
+        });
+    });
+    </script>
+</body>
+</html>

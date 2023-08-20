@@ -1,0 +1,137 @@
+{
+    "tema actual": null,
+    "secundaria": {
+        "porcentaje":0,
+        "modulo1": {
+            "espanol": {
+                "porcentaje":0,
+                "temas": [
+                    {
+                        "tema": "nombre del tema",
+                        "avance": 0
+                    },
+                    {
+                        "tema": "nombre del tema",
+                        "avance": 0
+                    }
+                ],
+                "diagnostico":{
+                    "url":"secundaria_modulo1_espanol.json",
+                    "aciertos":0,
+                    "errores":0
+                },
+                "calificacion": 0
+            },
+            "matematicas": {
+                "porcentaje":0,
+                "temas": [
+                    {
+                        "tema": "nombre del tema",
+                        "avance": 0
+                    },
+                    {
+                        "tema": "nombre del tema",
+                        "avance": 0
+                    }
+                ],
+                "calificacion": 0
+            },
+            "ciencias naturales": {
+                "porcentaje":0,
+                "temas": [
+                    {
+                        "tema": "nombre del tema",
+                        "avance": 0
+                    },
+                    {
+                        "tema": "nombre del tema",
+                        "avance": 0
+                    }
+                ],
+                "calificacion": 0
+            }
+        },
+        "modulo2": {
+            "espaniol": {
+                "temas": [
+                    {
+                        "tema": "nombre del tema",
+                        "avance": 0
+                    },
+                    {
+                        "tema": "nombre del tema",
+                        "avance": 0
+                    }
+                ],
+                "calificacion": 0
+            },
+            "matematicas": {
+                "temas": [
+                    {
+                        "tema": "nombre del tema",
+                        "avance": 0
+                    },
+                    {
+                        "tema": "nombre del tema",
+                        "avance": 0
+                    }
+                ],
+                "calificacion": 0
+            },
+            "ciencias naturales": {
+                "temas": [
+                    {
+                        "tema": "nombre del tema",
+                        "avance": 0
+                    },
+                    {
+                        "tema": "nombre del tema",
+                        "avance": 0
+                    }
+                ],
+                "calificacion": 0
+            }
+        },
+        "modulo3": {
+            "espaniol": {
+                "temas": [
+                    {
+                        "tema": "nombre del tema",
+                        "avance": 0
+                    },
+                    {
+                        "tema": "nombre del tema",
+                        "avance": 0
+                    }
+                ],
+                "calificacion": 0
+            },
+            "matematicas": {
+                "temas": [
+                    {
+                        "tema": "nombre del tema",
+                        "avance": 0
+                    },
+                    {
+                        "tema": "nombre del tema",
+                        "avance": 0
+                    }
+                ],
+                "calificacion": 0
+            },
+            "ciencias naturales": {
+                "temas": [
+                    {
+                        "tema": "nombre del tema",
+                        "avance": 0
+                    },
+                    {
+                        "tema": "nombre del tema",
+                        "avance": 0
+                    }
+                ],
+                "calificacion": 0
+            }
+        }
+    }
+}
